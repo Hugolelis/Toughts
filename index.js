@@ -18,6 +18,11 @@ app.set('view engine', 'handlebars')
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
+import { router as toughtsRoutes } from './routes/toughtsRoutes.js';
+
+import { Tought } from './models/Tought.js';
+import { User } from './models/User.js';
+
 app.use(session({
     name: 'session',
     secret: 'nosso_secret',
@@ -46,6 +51,12 @@ app.use((req, res, next) => {
 })
 
 app.use(express.static('public'))
+
+app.use('/toughts', toughtsRoutes)
+
+app.get('/', (req, res) => {
+    res.redirect('/toughts')
+})
 
 conn.sync().then(() => {
     app.listen(port)
