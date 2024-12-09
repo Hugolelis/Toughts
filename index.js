@@ -19,6 +19,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 import { router as toughtsRoutes } from './routes/toughtsRoutes.js';
+import { router as authRoutes } from './routes/authRoutes.js';
 
 import { Tought } from './models/Tought.js';
 import { User } from './models/User.js';
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 app.use(express.static('public'))
 
 app.use('/toughts', toughtsRoutes)
+app.use('/', authRoutes)
 
 app.get('/', (req, res) => {
     res.redirect('/toughts')
