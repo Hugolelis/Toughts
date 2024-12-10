@@ -34,7 +34,7 @@ export class ToughtController {
             toughtsQty = false
         }
 
-        res.render('toughts/home', {toughts, search, toughtsQty})
+        res.render('toughts/home', { toughts, search, toughtsQty })
     }
 
     static async dashboard(req, res) {
