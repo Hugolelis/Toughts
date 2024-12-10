@@ -11,7 +11,7 @@ export class ToughtController {
             search = req.query.search
         }
 
-        let order = 'DESC'
+        let order = 'n'
         if(req.query.order === 'old') {
             order = 'ASC'
         } else {
