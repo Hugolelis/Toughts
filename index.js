@@ -23,6 +23,7 @@ import { router as authRoutes } from './routes/authRoutes.js';
 
 import { Tought } from './models/Tought.js';
 import { User } from './models/User.js';
+import { ToughtController } from './controllers/ToughtController.js';
 
 app.use(session({
     name: 'session',
@@ -56,9 +57,7 @@ app.use(express.static('public'))
 app.use('/toughts', toughtsRoutes)
 app.use('/', authRoutes)
 
-app.get('/', (req, res) => {
-    res.redirect('/toughts')
-})
+app.get('/', ToughtController.showToughts)
 
 conn.sync().then(() => {
     app.listen(port)

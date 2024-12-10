@@ -1,10 +1,40 @@
-import { raw } from "mysql2";
 import { Tought } from "../models/Tought.js";
 import { User } from "../models/User.js";
 
+import { Op} from "sequelize"
+
 export class ToughtController {
     static async showToughts(req, res) {
-        res.render('toughts/home')
+        let search = ''
+
+        if(req.query.search) {
+            search = req.query.search
+        }
+
+        let order = 'DESC'
+        if(req.query.order === 'old') {
+            order = 'ASC'
+        } else {
+            order = 'DESC'
+        }
+
+        const toughtsData = await Tought.findAll(
+            {
+                include: User, 
+                where: {title: {[Op.like]: `%${search}%`}},
+                order: [['createdAt', order]]
+            }
+        )
+
+        const toughts = toughtsData.map((result) => result.get({plain: true}))
+
+        let toughtsQty = toughts.length
+
+        if(toughtsQty === 0) {
+            toughtsQty = false
+        }
+
+        res.render('toughts/home', {toughts, search, toughtsQty})
     }
 
     static async dashboard(req, res) {
@@ -33,6 +63,33 @@ export class ToughtController {
 
         await Tought.destroy({where: {id: id, UserId: userid}})
         req.flash('message', 'Pensamento excluido com sucesso!')
+
+        try {
+            req.session.save(() => {
+                res.redirect('/toughts/dashboard')
+            })
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    static async updateTought(req, res) {
+        const id = req.params.id
+        const tought = await Tought.findOne({raw: true, where: {id: id}})
+
+        res.render('toughts/edit', {tought})
+    }
+
+    static async updateToughtSave(req, res) {
+        const { title, id } = req.body
+
+        const tought = {
+            title,
+        }
+
+        await Tought.update(tought, {where: {id: id}})
+
+        req.flash('message', 'Pensamento editado com sucesso!')
 
         try {
             req.session.save(() => {
