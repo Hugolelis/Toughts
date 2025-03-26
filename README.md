@@ -1,45 +1,43 @@
-![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg) ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg)  ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg) ![Status](https://img.shields.io/badge/status-complete-brightgreen.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## Toughts
+# 💭 Toughts
 
-### Descrição: 
+### Description  
+This project implements a collaborative system for collecting thoughts and ideas from various users, following the **MVC (Model-View-Controller)** architectural pattern. Using **Node.js** for the backend and a **MySQL** database for storage, the system allows users to register, view, edit, and remove their thoughts. With a user-friendly and intuitive interface, the application promotes the sharing and organization of ideas, making access to **collective insights** structured and efficient.
 
-Este projeto implementa um sistema colaborativo para coleta de pensamentos e ideias de diversos usuários, 
-seguindo o padrão arquitetural MVC (Model-View-Controller). Utilizando Node.js no backend e um banco de dados MySQL para 
-o armazenamento, o sistema permite que os usuários registrem, visualizem, editem e removam seus pensamentos. Com uma interface amigável 
-e intuitiva, a aplicação promove o compartilhamento e organização de ideias, facilitando o acesso a insights coletivos de maneira estruturada e eficiente.
+## 🚀 Features
 
-### Funcionalidades
-1 - 📌Registrar conta<br/>
-2 - 📌Logar em uma conta <br/>
-3 - 📌Adicionar pensamentos <br/>
-4 - 📌Editar pensamentos <br/>
-5 - 📌Excluir pensamentos<br/>
-6 - 📌Dashboard individual de pensamentos<br/>
-7 - 📌For you de pensamentos<br/>
-8 - 📌Sistema de buscas para os pensamentos<br/>
+### 👤 Account Features  
+1️⃣ **Register an account**  
+2️⃣ **Log in to an account**  
+3️⃣ **Edit account**
 
-## Tecnologias Utilizadas: 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Handlebars](https://img.shields.io/badge/handlebars.js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black)
+### 💡 Thought Features  
+1️⃣ **Add thoughts**  
+2️⃣ **Edit thoughts**  
+3️⃣ **Delete thoughts**  
+4️⃣ **Individual dashboard of thoughts**  
+5️⃣ **"For You" thoughts** (explore ideas)  
+6️⃣ **Search system for thoughts**  
 
-## Como Executar o Projeto
+## 🛠️ Technologies Used  
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)  
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)  
+![Handlebars](https://img.shields.io/badge/handlebars.js-f0772b?style=for-the-badge&logo=handlebarsdotjs&logoColor=black)  
 
-### 1 - Clone o repositório
+## 📂 How to Run the Project
+
+### 1️⃣ Clone the repository  
 ```bash
 git clone https://github.com/Hugolelis/Toughts.git
 ```
-### 2 - Acesse o diretório do projeto:
+### 2️⃣ Install dependencies 
 ```bash
-cd Toughts
+npm i
 ```
-
-### 3 - Instale as dependências:
-```bash
-npm install
-```
-### 4 - Execução:
+### 3️⃣ Start project
 ```bash
 npm start
 ```
+
+
