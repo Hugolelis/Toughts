@@ -27,15 +27,15 @@ This project implements a collaborative system for collecting thoughts and ideas
 
 ## 📂 How to Run the Project
 
-### 1️⃣ Clone the repository  
+### 1️⃣ Clone the repository:
 ```bash
 git clone https://github.com/Hugolelis/Toughts.git
 ```
-### 2️⃣ Install dependencies 
+### 2️⃣ Install dependencies :
 ```bash
 npm i
 ```
-### 3️⃣ Start project
+### 3️⃣ Start project:
 ```bash
 npm start
 ```
